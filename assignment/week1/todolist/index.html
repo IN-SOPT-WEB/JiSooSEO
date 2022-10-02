@@ -5,16 +5,47 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <header>To do List</header>
+    <header id="head-title"><h1>🌷 To do List 🌷</h1></header>
     <nav>
       <button>오늘만 보기</button>
       <button>내일만 보기</button>
       <button>함께 보기</button>
     </nav>
-    <left-section>오늘 할 일 </left-section>
-    <right-section>내일 할 일</right-section>
+    <main>
+      <section id="left-section">
+        <header><h3>오늘 할 일</h3></header>
+        <ul>
+          <li>
+            과제
+            <hr />
+          </li>
+        </ul>
+        <footer class="add-tasks">
+          <input placeholder="오늘 할 일 추가하기" />
+          <button>+</button>
+        </footer>
+      </section>
+      <section id="right-section">
+        <header><h3>내일 할 일</h3></header>
+        <ul>
+          <li>
+            무화과 파이 먹기
+            <hr />
+          </li>
+          <li>
+            솝트 과제하기
+            <hr />
+          </li>
+        </ul>
+        <footer class="add-tasks">
+          <input placeholder="내일 할 일 추가하기" />
+          <button>+</button>
+        </footer>
+      </section>
+    </main>
     <footer>Copyright&copy; jisoosoo</footer>
   </body>
 </html>
