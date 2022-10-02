@@ -1,0 +1,17 @@
+@import "substyle.css";
+
+body{
+    background-color:pink;
+}
+
+.three+li{
+    color:aqua
+}
+.three~li{
+    color:aqua
+}
+.setItem{
+    display: flex;
+    justify-content: center;
+    align-items:center;
+}
