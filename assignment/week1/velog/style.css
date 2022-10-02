@@ -1,0 +1,70 @@
+body{
+    width: 1024px;
+    font-size: 1.2rem;
+}
+#header-left{
+    font-family: 'Courier Prime', monospace;
+    font-weight: bold;
+    font-size: 2rem;
+}
+#login-button{
+    border:1px solid black;
+    background-color: white;
+    border-radius: 30px;
+    padding: 0.5vw 1.5vw;
+    font-size: 1rem;
+}
+#login-button:hover{
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}
+nav{
+    display: flex;
+    width: 30%;
+    justify-content: space-between;
+    margin-top: 2vw;
+}
+.select{
+    display: flex;
+    align-items: center;
+}
+p{
+    margin: 0em;
+}
+.nav-hr{
+    width: 90px;
+    float: left;
+}
+header{
+    display: flex;
+    justify-content: space-between;
+    margin: 1vw 0vw;
+}
+.material-symbols-outlined{
+    margin-right: 0.5vw;
+}
+header>.material-symbols-outlined{
+    font-size: 2rem;
+}
+#header-right{
+    display: flex;
+    align-items: center;
+}
+#select-date{
+    width: 30%;
+    color: #777777;
+    font-size: 1rem;
+}
+.card{
+    width: 30%;
+    border-radius: 15px;
+    box-shadow: 5px 5px 5px 5px rgb(172, 172, 172);
+    overflow: hidden;
+}
+.card-img{
+    width: 100%;
+}
+.card-bottom{
+    display: flex;
+}
