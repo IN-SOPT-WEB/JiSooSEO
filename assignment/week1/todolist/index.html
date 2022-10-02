@@ -6,42 +6,53 @@
     <meta name="viewport" content="width=, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Courier+Prime&family=Noto+Sans+KR:wght@300&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <header id="head-title"><h1>🌷 To do List 🌷</h1></header>
     <nav>
-      <button>오늘만 보기</button>
-      <button>내일만 보기</button>
-      <button>함께 보기</button>
+      <button>Today</button>
+      <button>Tomorrow</button>
+      <button>Together</button>
     </nav>
     <main>
       <section id="left-section">
-        <header><h3>오늘 할 일</h3></header>
+        <header><h3>Today</h3></header>
         <ul>
           <li>
-            과제
-            <hr />
+            <input type="checkbox" />
+            <span class="todo-text">과제 💻</span>
+            <button class="trash-button">trash</button>
           </li>
         </ul>
         <footer class="add-tasks">
-          <input placeholder="오늘 할 일 추가하기" />
+          <input type="text" placeholder="오늘 할 일 추가하기" />
           <button>+</button>
         </footer>
       </section>
       <section id="right-section">
-        <header><h3>내일 할 일</h3></header>
+        <header><h3>Tomorrow</h3></header>
         <ul>
           <li>
-            무화과 파이 먹기
-            <hr />
+            <input type="checkbox" />
+            <span class="todo-text">무화과 파이 먹기</span>
+            <button class="trash-button">trash</button>
           </li>
+          <hr />
           <li>
-            솝트 과제하기
-            <hr />
+            <input type="checkbox" />
+            <span class="todo-text">솝트 과제하기</span>
+            <button class="trash-button">trash</button>
           </li>
         </ul>
         <footer class="add-tasks">
-          <input placeholder="내일 할 일 추가하기" />
+          <input type="text" placeholder="내일 할 일 추가하기" />
           <button>+</button>
         </footer>
       </section>

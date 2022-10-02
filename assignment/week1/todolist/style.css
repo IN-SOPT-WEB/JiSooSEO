@@ -1,41 +1,37 @@
 body{
-    text-align: center;
     display: flex;
     flex-direction: column;
+    place-items: center;
+    width: 100%;
     background-color: rgb(255, 240, 222);
     height: 800px;
+    font-family: 'Courier Prime', 'Noto Sans KR',monospace,sans-serif;
 }
 section{
-    width: 30%;
     height: 600px;
     display: flex;
     flex-direction: column;
+    width: 30vw;
 }
 main{
    display: flex;
    justify-content: center;
 }
-button{
-    color: rgb(255, 115, 138);
-    background-color: white;
-    border: 1px solid rgb(255, 115, 138);
-    border-radius: 30px;
-    padding: 3px 7px;
-}
 hr{
     border: 0.5px solid #C4C4C4;
     background-color: #C4C4C4;
 }
-#head-title{
-    color:rgb(255, 115, 138);
-}
 #left-section{
-    float: left;
-    margin-right: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    margin-right: 2vw;
 }
 #right-section{
-    float: right;
-    margin-left: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: right;
+    margin-left: 2vw;
 }
 .add-tasks{
     display: flex;
@@ -43,12 +39,29 @@ hr{
     justify-content: center;
     width: 100%;
 }
-input{
+input[type="text"]{
     width: 85%;
-}
-header, footer{
-    /* background-color: pink; */
 }
 ul{
     height: 450px;
+}
+.footer{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+ul{
+    list-style:none;
+    padding-left:0px;
+
+}
+ul>li{
+    text-align: start;
+}
+.trash-button{
+    float: right;
+}
+[type=checkbox]:checked + .todo-text{
+    color:#777777;
+    text-decoration-line: line-through;
 }
