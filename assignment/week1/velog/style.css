@@ -25,6 +25,7 @@ nav{
     width: 30%;
     justify-content: space-between;
     margin-top: 2vw;
+    
 }
 .select{
     display: flex;
@@ -60,15 +61,18 @@ header>.material-symbols-outlined{
 }
 .card{
     background-color: white;
-    width: 31%;
+    /* width: 31%; */
+    width: 320px;
+    /* width: 20vw; */
     border-radius: 5px;
     overflow: hidden;
     box-shadow: 0px 0px 25px 5px rgb(234, 233, 233);
+    margin-bottom: 2em;
 }
 .card:hover{
     box-shadow: 0px 0px 25px 5px rgb(201, 201, 201);
     margin-top: -0.5em;
-    margin-bottom: 0.5em;
+    margin-bottom: 2.5em;
     cursor: pointer;
 }
 
@@ -84,20 +88,35 @@ header>.material-symbols-outlined{
 }
 .card-top-text{
     height: 80px;
-    margin: 0.5em;
+    margin: 0.5em 1em;
+    font-size: 1rem;
 }
 .card-top>p{
-    margin: 0.6em;
+    margin: 0em 4em 2em 4em;
     color: #9c9c9c;
-    font-size: 00.8em;
+    font-size: 0.2em;
 }
 .card-profile-img{
     width: 10%;
     border-radius: 50px;
     border: 0.5px solid black;
 }
+.card-profile-writer{
+    margin-left: 0.5vw;
+    color: #9c9c9c;
+   
+}
+.card-profile-writer>strong{
+    color: black;
+
+}
 .card-bottom-left, .card-bottom-right{
     display: flex;
+    font-size: 0.7em;
+    align-items: center;
+}
+#like{
+    font-size: 1.2em;
 }
 h3{
     margin: 0em;
@@ -109,4 +128,16 @@ h3{
     margin-top: 2.5em;
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
+
+/* 1024 이상 */
+@media (min-width: 1024px) {
+    body{
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%,0%);
+    }
+  }
+/* 1000 미만 */
+@media(max)
