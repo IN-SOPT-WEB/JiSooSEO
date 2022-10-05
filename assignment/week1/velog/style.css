@@ -138,6 +138,34 @@ h3{
         left: 50%;
         transform: translate(-50%,0%);
     }
+    
   }
 /* 1000 미만 */
-@media(max)
+@media(max-width:1000px){
+    .card{
+        width: 350px;
+    }
+    body{
+        width: 850px;
+    }
+    header{
+        width: 90vw;;
+    }
+    .card-section{
+        justify-content: space-evenly;
+    }
+}
+@media(max-width:800px){
+    .card{
+        width: 400px;
+    }
+    body{
+        width: 790px;
+    }
+    header{
+        width: 90vw;;
+    }
+    .card-section{
+        justify-content: left;
+    }
+}
