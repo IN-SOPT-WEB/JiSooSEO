@@ -141,31 +141,53 @@ h3{
     
   }
 /* 1000 미만 */
-@media(max-width:1000px){
+@media(max-width: 1000px){
     .card{
-        width: 350px;
+        /* width: 350px; */
+        width: calc(50% - 2rem);   
     }
     body{
-        width: 890px;
+        width: 800px;
     }
     header{
-        width: 90vw;;
+        /* width: 90vw; */
+        width: 100%;
     }
     .card-section{
         justify-content: space-evenly;
     }
 }
-@media(max-width:800px){
+@media(max-width: 800px){
     .card{
-        width: 400px;
+        width:100%;
     }
     body{
-        width: 790px;
+        width: 700px;
     }
     header{
-        width: 90vw;;
+        width: 100%
     }
     .card-section{
         justify-content: left;
+    }
+}
+@media(max-width: 650px){
+    .card{
+        width:100%;
+    }
+    body{
+        width: 500px;
+    }
+    header{
+        width: 100%
+    }
+    .card-section{
+        justify-content: left;
+    }
+    nav{
+        width: 55%;
+    }
+    .nav-hr{
+        width: 85px;
     }
 }
