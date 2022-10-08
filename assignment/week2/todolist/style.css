@@ -65,3 +65,7 @@ ul>li{
     color:#777777;
     text-decoration-line: line-through;
 }
+.hidden{
+    width: 0;
+    overflow: hidden;
+}
