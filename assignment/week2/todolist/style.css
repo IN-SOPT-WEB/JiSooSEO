@@ -1,17 +1,30 @@
 body{
     display: flex;
     flex-direction: column;
-    place-items: center;
+    /* place-items: center; */
     width: 100%;
-    background-color: rgb(255, 240, 222);
+    /* background-color: rgb(255, 240, 222); */
     height: 800px;
     font-family: 'Courier Prime', 'Noto Sans KR',monospace,sans-serif;
+    margin: 0;
+}
+.flex{
+    display: flex;
+    justify-content: center;
+}
+nav{
+    padding: 20px;
+}
+button{
+    margin: 0vw 1vw;
 }
 section{
-    height: 600px;
+    /* height: 600px; */
     display: flex;
     flex-direction: column;
     width: 30vw;
+    border:1px solid;
+    padding: 0vw 0vw 1vw 1vw;
 }
 main{
    display: flex;
@@ -21,17 +34,23 @@ hr{
     border: 0.5px solid #C4C4C4;
     background-color: #C4C4C4;
 }
+.title{
+    margin:0;
+    background-color: bisque;
+    padding: 1.3vw;
+}
+#footer-title{
+    margin: 30px 0px;
+}
 #left-section{
     display: flex;
     flex-direction: column;
     justify-content: left;
-    margin-right: 2vw;
 }
 #right-section{
     display: flex;
     flex-direction: column;
     justify-content: right;
-    margin-left: 2vw;
 }
 .add-tasks{
     display: flex;
@@ -45,11 +64,7 @@ input[type="text"]{
 ul{
     height: 450px;
 }
-.footer{
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-}
+
 ul{
     list-style:none;
     padding-left:0px;
