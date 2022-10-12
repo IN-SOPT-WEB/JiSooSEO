@@ -23,7 +23,7 @@
     <main>
       <section id="left-section">
         <header><h3>Today</h3></header>
-        <ul>
+        <ul id="todayTaskList">
           <li>
             <input type="checkbox" />
             <span class="todo-text">과제 💻</span>
@@ -31,13 +31,17 @@
           </li>
         </ul>
         <footer class="add-tasks">
-          <input type="text" placeholder="오늘 할 일 추가하기" />
-          <button type="button">+</button>
+          <input
+            type="text"
+            id="addTodayTask"
+            placeholder="오늘 할 일 추가하기"
+          />
+          <button type="button" id="addTodayTaskButton">+</button>
         </footer>
       </section>
       <section id="right-section">
         <header><h3>Tomorrow</h3></header>
-        <ul>
+        <ul id="tomorrowTaskList">
           <li>
             <input type="checkbox" />
             <span class="todo-text">무화과 파이 먹기</span>
@@ -51,8 +55,12 @@
           </li>
         </ul>
         <footer class="add-tasks">
-          <input type="text" placeholder="내일 할 일 추가하기" />
-          <button type="button">+</button>
+          <input
+            type="text"
+            id="addTomorrowTask"
+            placeholder="내일 할 일 추가하기"
+          />
+          <button id="addTomorrowTaskButton" type="button">+</button>
         </footer>
       </section>
     </main>

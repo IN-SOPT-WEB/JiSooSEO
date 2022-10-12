@@ -90,3 +90,6 @@ ul>li{
     width: 0;
     overflow: hidden;
 }
+.todo-text{
+    margin-left: 0.5vw;
+}
