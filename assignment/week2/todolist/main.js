@@ -121,17 +121,12 @@ function submitTomorrowClick(e) {
   tomorrowInput.value = "";
   addTomorrowTask(addTomorrowValue);
 }
-function enterkey() {
-  if (window.event.keyCode == 13) {
-    submitTodayClick;
-  }
-}
-todayInput.addEventListener("keyup", (e) => {
+todayInput.addEventListener("keypress", (e) => {
   if (e.keyCode === 13) {
     submitTodayClick(e); // 여긴 왜... 괄호에 e를 꼭 넣어주어야하는가?
   }
 });
-tomorrowInput.addEventListener("keyup", (e) => {
+tomorrowInput.addEventListener("keypress", (e) => {
   if (e.keyCode === 13) {
     submitTomorrowClick(e);
   }
@@ -143,4 +138,3 @@ seeTogether.addEventListener("click", seeTogetherClick);
 
 addTodayTaskButton.addEventListener("click", submitTodayClick);
 addTomorrowTaskButton.addEventListener("click", submitTomorrowClick);
-onkeyup = "onKeyUp(e)";
