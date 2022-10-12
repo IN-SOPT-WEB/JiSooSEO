@@ -27,10 +27,11 @@ function seeTogetherClick() {
 // 할 일 추가, 삭제
 const addTodayTaskButton = document.querySelector("#addTodayTaskButton");
 const addTomorrowTaskButton = document.querySelector("#addTomorrowTaskButton");
-const tomorrowTask = document.querySelector("#addTomorrowTask").value;
+const todayInput = document.querySelector("#addTodayTask");
+const tomorrowInput = document.querySelector("#addTomorrowTask");
 
-function addTodayTask() {
-  const addTodayValue = document.querySelector("#addTodayTask").value;
+function addTodayTask(addTodayValue) {
+  //   const addTodayValue = document.querySelector("#addTodayTask").value;
 
   const li = document.createElement("li");
   const input = document.createElement("input");
@@ -53,8 +54,8 @@ function addTodayTask() {
 
   document.querySelector("#todayTaskList").appendChild(li);
 }
-function addTomorrowTask() {
-  const addTomorrowValue = document.querySelector("#addTomorrowTask").value;
+function addTomorrowTask(addTomorrowValue) {
+  //   const addTomorrowValue = document.querySelector("#addTomorrowTask").value;
 
   const li = document.createElement("li");
   const input = document.createElement("input");
@@ -79,9 +80,22 @@ function deleteTasks(e) {
   const deleteTask = e.target.parentElement;
   deleteTask.remove();
 }
+function submitTodayClick(e) {
+  e.preventDefault();
+  const addTodayValue = todayInput.value;
+  todayInput.value = "";
+  addTodayTask(addTodayValue);
+}
+function submitTomorrowClick(e) {
+  e.preventDefault();
+  const addTomorrowValue = tomorrowInput.value;
+  tomorrowInput.value = "";
+  addTomorrowTask(addTomorrowValue);
+}
+
 seeToday.addEventListener("click", seeTodayClick);
 seeTomorrow.addEventListener("click", seeTomorrowClick);
 seeTogether.addEventListener("click", seeTogetherClick);
 
-addTodayTaskButton.addEventListener("click", addTodayTask);
-addTomorrowTaskButton.addEventListener("click", addTomorrowTask);
+addTodayTaskButton.addEventListener("click", submitTodayClick);
+addTomorrowTaskButton.addEventListener("click", submitTomorrowClick);
