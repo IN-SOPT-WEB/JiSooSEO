@@ -42,13 +42,27 @@
       <div  class="select">
         <span class="material-symbols-outlined"> schedule </span>
         <p>최신</p>
-      </div  class="select">
+      </div class="select">
       <!-- <select name="select-date" class="select" id="select-date">
         <option value="day">오늘</option>
         <option value="week">이번 주</option>
         <option value="month">이번 달</option>
         <option value="year">올해</option>
       </select> -->
+      <div id="select-date-option">
+        <p id="select-default-date">올해
+            <span class="material-symbols-outlined" id="select-date-button">
+                arrow_drop_down
+            </span>
+        </p>
+      
+        <div id="select-date-list">
+            <p id="select-day">오늘</p>
+            <p id="select-week">이번 주</p>
+            <p id="select-month">이번 달</p>
+            <p id="select-year">올해</p>
+        </div>
+      </div>
     </nav>
     <hr class="nav-hr"/>
     <section class="card-section">
@@ -251,5 +265,7 @@
   </div>
   
     </section>
+    <script src="main.js"></script>
+
   </body>
 </html>

@@ -29,10 +29,12 @@ body{
 }
 nav{
     display: flex;
-    width: 30%;
+    width: 18%;
     justify-content: space-between;
     margin-top: 2vw;
-    
+    align-items: flex-start;
+    z-index: 2;
+    position: relative;
 }
 .select{
     display: flex;
@@ -140,7 +142,41 @@ h3{
     justify-content: space-between;
     flex-wrap: wrap;
 }
-
+#select-date-option{
+    border: 1px solid white;
+    border-radius: 3px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* padding-left: 10px; */
+    background-color: white;
+    box-shadow: 0px 0px 25px -5px #c4c4c4;
+    font-size: 1rem;
+    width: 50%;
+    position: absolute;
+    z-index: 2;
+    left: 120%;
+}
+#select-date-list{
+    display: none;
+}
+#select-date-button{
+    cursor: pointer;
+    margin-right:0vw
+}
+#select-default-date{
+    display: flex;
+    align-items: center;
+    font-size: 1.1rem;
+    padding: 3px;
+}
+.data-list-showing{
+    color:#777777;
+    cursor: pointer;
+}
+.date-font-color{
+    color: aqua;
+}
 /* 1024 이상 */
 @media (min-width: 1024px) {
     body{
@@ -163,6 +199,10 @@ h3{
         /* width: 90vw; */
         width: 100%;
     }
+    nav{
+        width: 25%;
+    }
+
     .card-section{
         justify-content: space-between;
     }
@@ -178,6 +218,9 @@ h3{
     }
     body{
         width: 700px;
+    }
+    nav{
+        width: 25%;
     }
     header{
         width: 100%
@@ -200,7 +243,7 @@ h3{
         justify-content: left;
     }
     nav{
-        width: 55%;
+        width: 35%;
     }
     .nav-hr{
         width: 85px;
