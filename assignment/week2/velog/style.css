@@ -195,7 +195,7 @@ h3{
     cursor: pointer;
 }
 .date-font-color{
-    color: aqua;
+    color:steelblue;
 }
 /* 1024 이상 */
 @media (min-width: 1024px) {
