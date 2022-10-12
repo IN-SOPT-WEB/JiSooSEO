@@ -49,7 +49,7 @@ function addTodayTask() {
   li.appendChild(button);
   button.innerText = "trash";
   button.setAttribute("class", "trash-button");
-  //   button.addEventListener("click", deleteTasks);
+  button.addEventListener("click", deleteTasks);
 
   document.querySelector("#todayTaskList").appendChild(li);
 }
@@ -71,9 +71,13 @@ function addTomorrowTask() {
   li.appendChild(button);
   button.innerText = "trash";
   button.setAttribute("class", "trash-button");
-  //   button.addEventListener("click", deleteTasks);
+  button.addEventListener("click", deleteTasks);
 
   document.querySelector("#tomorrowTaskList").appendChild(li);
+}
+function deleteTasks(e) {
+  const deleteTask = e.target.parentElement;
+  deleteTask.remove();
 }
 seeToday.addEventListener("click", seeTodayClick);
 seeTomorrow.addEventListener("click", seeTomorrowClick);
