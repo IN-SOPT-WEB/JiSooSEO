@@ -32,18 +32,29 @@ const tomorrowInput = document.querySelector("#addTomorrowTask");
 
 function addTodayTask(addTodayValue) {
   //   const addTodayValue = document.querySelector("#addTodayTask").value;
-
+  let li_num = 0;
+  if (document.querySelector(".today-task-li") !== null) {
+    li_num += 1;
+  }
   const li = document.createElement("li");
   const input = document.createElement("input");
   input.setAttribute("type", "checkbox");
 
   const button = document.createElement("button");
   li.setAttribute("id", addTodayValue);
+  li.setAttribute("class", "today-task-li");
 
   const span = document.createElement("span");
   span.innerHTML = addTodayValue;
   span.setAttribute("class", "todo-text");
   //   const textNode = document.createTextNode(addTodayValue);
+  if (li_num !== 0) {
+    const hr = document.createElement("hr");
+    hr.setAttribute("class", "todolist-hr");
+    li.append(hr);
+    console.log("dsahfdjksafdf");
+  }
+
   li.appendChild(input);
   //   li.appendChild(textNode);
   li.appendChild(span);
@@ -56,6 +67,16 @@ function addTodayTask(addTodayValue) {
 }
 function addTomorrowTask(addTomorrowValue) {
   //   const addTomorrowValue = document.querySelector("#addTomorrowTask").value;
+  let li_num = 0;
+  if (document.querySelector(".tomorrow-task-li") !== null) {
+    li_num += 1;
+  }
+
+  if (document.querySelector("li") !== null) {
+    const hr = document.createElement("hr");
+    hr.setAttribute("class", "todolist-hr");
+    console.log("dsahfdjksafdf");
+  }
 
   const li = document.createElement("li");
   const input = document.createElement("input");
@@ -63,10 +84,18 @@ function addTomorrowTask(addTomorrowValue) {
 
   const button = document.createElement("button");
   li.setAttribute("id", addTomorrowValue);
+  li.setAttribute("class", "tomorrow-task-li");
 
   const span = document.createElement("span");
   span.innerHTML = addTomorrowValue;
   span.setAttribute("class", "todo-text");
+  if (li_num !== 0) {
+    const hr = document.createElement("hr");
+    hr.setAttribute("class", "todolist-hr");
+    li.append(hr);
+    console.log("dsahfdjksafdf");
+  }
+
   li.appendChild(input);
   li.appendChild(span);
   li.appendChild(button);

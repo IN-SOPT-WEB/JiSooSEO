@@ -93,3 +93,6 @@ ul>li{
 .todo-text{
     margin-left: 0.5vw;
 }
+.todolist-hr{
+    width: 100%;
+}
