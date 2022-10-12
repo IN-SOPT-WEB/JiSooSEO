@@ -197,6 +197,17 @@ h3{
 .date-font-color{
     color:steelblue;
 }
+#tag-section{
+    display: flex;
+}
+.tag-style{
+    border: 1px solid darkcyan;
+    border-radius: 60px;
+    background-color: darkcyan;
+    font-size: 1.2rem;
+    margin: 5px;
+    padding: 5px;
+}
 /* 1024 이상 */
 @media (min-width: 1024px) {
     body{
