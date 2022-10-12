@@ -18,6 +18,12 @@ nav{
 button{
     margin: 0vw 1vw;
 }
+button:hover{
+    background-color: #777777;
+    border: 1px solid black;
+    color: white;
+    border-radius: 2px;
+}
 section{
     /* height: 600px; */
     display: flex;
