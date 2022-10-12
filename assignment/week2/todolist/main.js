@@ -57,14 +57,24 @@ function addTomorrowTask() {
   const addTomorrowValue = document.querySelector("#addTomorrowTask").value;
 
   const li = document.createElement("li");
+  const input = document.createElement("input");
+  input.setAttribute("type", "checkbox");
+
+  const button = document.createElement("button");
   li.setAttribute("id", addTomorrowValue);
 
-  const textNode = document.createTextNode(addTomorrowValue);
-  li.appendChild(textNode);
+  const span = document.createElement("span");
+  span.innerHTML = addTomorrowValue;
+  span.setAttribute("class", "todo-text");
+  li.appendChild(input);
+  li.appendChild(span);
+  li.appendChild(button);
+  button.innerText = "trash";
+  button.setAttribute("class", "trash-button");
+  //   button.addEventListener("click", deleteTasks);
 
   document.querySelector("#tomorrowTaskList").appendChild(li);
 }
-
 seeToday.addEventListener("click", seeTodayClick);
 seeTomorrow.addEventListener("click", seeTomorrowClick);
 seeTogether.addEventListener("click", seeTogetherClick);
