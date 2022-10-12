@@ -65,8 +65,6 @@ function showDateList() {
     document.querySelector("#select-date-list").style.display = "none";
   } else {
     document.querySelector("#select-date-list").style.display = "block";
-    document.querySelector("#select-date-list").style.position = "relative";
-    document.querySelector("#select-date-list").style.zIndex = "2";
   }
 }
 dateSelectButton.addEventListener("click", showDateList);

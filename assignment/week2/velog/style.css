@@ -29,7 +29,7 @@ body{
 }
 nav{
     display: flex;
-    width: 18%;
+    width: 30%;
     justify-content: space-between;
     margin-top: 2vw;
     align-items: flex-start;
@@ -143,22 +143,29 @@ h3{
     flex-wrap: wrap;
 }
 #select-date-option{
+    
+}
+#select-date-list{
     border: 1px solid white;
     border-radius: 3px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    /* padding-left: 10px; */
+    display: none;
+    cursor: pointer;
     background-color: white;
     box-shadow: 0px 0px 25px -5px #c4c4c4;
     font-size: 1rem;
-    width: 50%;
+    width: 60%;
     position: absolute;
     z-index: 2;
-    left: 120%;
+    left: 45%;
+    top: 100%;
+    list-style:none;
+    padding-left:0px;
 }
-#select-date-list{
-    display: none;
+#select-date-list>.select-date-hr{
+    border-top: 1px solid #777777;
+}
+#select-date-list>li{
+    padding: 10px;
 }
 #select-date-button{
     cursor: pointer;
@@ -169,6 +176,19 @@ h3{
     align-items: center;
     font-size: 1.1rem;
     padding: 3px;
+    border: 1px solid white;
+    border-radius: 3px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-left: 10px;
+    background-color: white;
+    box-shadow: 0px 0px 25px -5px #c4c4c4;
+    width: 100%;
+    /* position: absolute;
+    z-index: 2; */
+    /* left: 120%; */
+    justify-content: space-between;
 }
 .data-list-showing{
     color:#777777;
@@ -200,7 +220,7 @@ h3{
         width: 100%;
     }
     nav{
-        width: 25%;
+        width: 40%;
     }
 
     .card-section{
@@ -220,7 +240,7 @@ h3{
         width: 700px;
     }
     nav{
-        width: 25%;
+        width: 40%;
     }
     header{
         width: 100%
@@ -243,7 +263,7 @@ h3{
         justify-content: left;
     }
     nav{
-        width: 35%;
+        width: 50%;
     }
     .nav-hr{
         width: 85px;
