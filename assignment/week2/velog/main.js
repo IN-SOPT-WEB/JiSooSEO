@@ -58,6 +58,10 @@ function deleteX(e) {
   const deleteX = e.target.parentElement;
 
   deleteX.remove();
+  document.body.classList.remove("card-modal-background");
+  document
+    .querySelector("#select-default-date")
+    .classList.remove("card-modal-selecting-color");
 }
 
 dateSelectButton.addEventListener("click", showDateList);
