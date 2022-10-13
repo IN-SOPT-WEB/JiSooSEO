@@ -27,29 +27,4 @@ function showDateList() {
   }
 }
 
-const tagInput = document.querySelector(".new-tag");
-const tagArray = [];
-
-tagInput.addEventListener("keypress", (e) => {
-  if (e.keyCode === 13) {
-    submitTagClick(e);
-  }
-});
-function submitTagClick(e) {
-  e.preventDefault();
-  const addTagValue = tagInput.value;
-  tagInput.value = "";
-  addTagTask(addTagValue);
-}
-function addTagTask(addTagValue) {
-  const span = document.createElement("span");
-  span.innerHTML = addTagValue;
-  span.setAttribute("class", "tag-style");
-  if (tagArray.includes(addTagValue) === false) {
-    document.querySelector("#tag-list").append(span);
-    tagArray.push(addTagValue);
-    console.log(tagArray);
-  }
-}
-
 dateSelectButton.addEventListener("click", showDateList);
