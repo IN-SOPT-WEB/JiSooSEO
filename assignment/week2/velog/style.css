@@ -197,7 +197,29 @@ h3{
 .date-font-color{
     color:steelblue;
 }
-
+.card-modal-style{
+    width: 200%;
+    height: 100%;
+    position: absolute;
+    left: -50%;
+    top: 10%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgba(95, 95, 95, 0.8);
+    backdrop-filter: blur(1.5px);
+}
+.card-modal-background{
+    background-color: rgba(95, 95, 95);
+    overflow: hidden;
+}
+.card-modal-selecting-color{
+    background-color: rgba(95, 95, 95,0.2)!important; 
+    border-color: rgba(95, 95, 95,0.2)!important;
+    filter: blur(1.5px);
+    -webkit-filter: blur(1.5px);
+}
 /* 1024 이상 */
 @media (min-width: 1024px) {
     body{
