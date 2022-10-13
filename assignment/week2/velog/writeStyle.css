@@ -1,5 +1,6 @@
 #tag-section{
     display: flex;
+    align-items: center;
 }
 .tag-style{
     border: 1px solid darkcyan;
@@ -9,4 +10,7 @@
     margin: 5px;
     padding: 5px;
     cursor: pointer;
+}
+.new-tag{
+    height: 15px;
 }
