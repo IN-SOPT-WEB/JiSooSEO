@@ -140,11 +140,10 @@ h3{
     margin-top: 2.5em;
     display: flex;
     justify-content: space-between;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
+    overflow: hidden;
 }
-#select-date-option{
-    
-}
+
 #select-date-list{
     border: 1px solid white;
     border-radius: 3px;
@@ -229,69 +228,3 @@ h3{
     }
     
   }
-/* 1000 미만 */
-@media(max-width: 1000px){
-    .card{
-        /* width: 350px; */
-        width: calc(37.5% - 3rem);   
-    }
-    body{
-        width: 800px;
-    }
-    header{
-        /* width: 90vw; */
-        width: 100%;
-    }
-    nav{
-        width: 40%;
-    }
-
-    .card-section{
-        justify-content: space-between;
-    }
-}
-@media(max-width: 800px){
-    .card{
-        /* width:100%; */
-        width: calc(53% - 2rem);   
-
-    }
-    .card-img{
-        height: 195px;
-    }
-    body{
-        width: 700px;
-    }
-    nav{
-        width: 40%;
-    }
-    header{
-        width: 100%
-    }
-    .card-section{
-        justify-content: space-between;
-    }
-}
-@media(max-width: 650px){
-    .card{
-        width:100%;
-    }
-    body{
-        width: 500px;
-    }
-    header{
-        width: 100%
-    }
-    .card-section{
-        justify-content: left;
-    }
-    nav{
-        width: 50%;
-    }
-    .nav-hr{
-        width: 85px;
-    }
-    .card-img{
-        height:280px;
-    }
-}
