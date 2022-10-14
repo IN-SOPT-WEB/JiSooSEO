@@ -1,0 +1,67 @@
+body{
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+    width: 100%;
+    background-color: rgb(255, 240, 222);
+    height: 800px;
+    font-family: 'Courier Prime', 'Noto Sans KR',monospace,sans-serif;
+}
+section{
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    width: 30vw;
+}
+main{
+   display: flex;
+   justify-content: center;
+}
+hr{
+    border: 0.5px solid #C4C4C4;
+    background-color: #C4C4C4;
+}
+#left-section{
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    margin-right: 2vw;
+}
+#right-section{
+    display: flex;
+    flex-direction: column;
+    justify-content: right;
+    margin-left: 2vw;
+}
+.add-tasks{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+}
+input[type="text"]{
+    width: 85%;
+}
+ul{
+    height: 450px;
+}
+.footer{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+ul{
+    list-style:none;
+    padding-left:0px;
+
+}
+ul>li{
+    text-align: start;
+}
+.trash-button{
+    float: right;
+}
+[type=checkbox]:checked + .todo-text{
+    color:#777777;
+    text-decoration-line: line-through;
+}
