@@ -73,7 +73,7 @@ header>.material-symbols-outlined{
     background-color: white;
     /* width: 31%; */
     /* width: 320px; */
-    width: 240px;
+    width: 299px;
     /* width: 20vw; */
     border-radius: 5px;
     overflow: hidden;
@@ -89,7 +89,7 @@ header>.material-symbols-outlined{
 
 .card-img{
     width: 100%;
-    height: 150px;
+    height: 180px;
 }
 .card-bottom{
     display: flex;
@@ -139,7 +139,7 @@ h3{
 .card-section{
     margin-top: 2.5em;
     display: flex;
-    justify-content: space-between;
+    justify-content: start;
     /* flex-wrap: wrap; */
     overflow: hidden;
 }
@@ -218,6 +218,18 @@ h3{
     border-color: rgba(95, 95, 95,0.2)!important;
     filter: blur(1.5px);
     -webkit-filter: blur(1.5px);
+}
+.card-container{
+    margin-right: 1vw
+}
+.carousel{
+    display: flex;
+    align-items: center;
+    margin-top:30px
+}
+#left-button, #right-button{
+    height: 300px;
+    margin-top: 20px;
 }
 /* 1024 이상 */
 @media (min-width: 1024px) {
