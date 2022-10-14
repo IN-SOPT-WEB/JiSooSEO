@@ -7,16 +7,16 @@ const defaultDate = document.querySelector("#select-default-date-text");
 function showDateList() {
   let dateListStatus = dateList.style.display;
   if (dateListStatus === "block") {
-    document.querySelector("#select-date-list").style.display = "none";
+    document.querySelector("#select-date-list").classList.remove("add-block");
   } else {
-    document.querySelector("#select-date-list").style.display = "block";
+    document.querySelector("#select-date-list").classList.add("add-block");
   }
   console.log(selecting);
   for (let i = 0; i < selecting.length; i++) {
     selecting[i].addEventListener("click", function () {
       selecting[i].classList.add("date-font-color");
       defaultDate.innerHTML = selecting[i].innerHTML;
-      document.querySelector("#select-date-list").style.display = "none";
+      document.querySelector("#select-date-list").classList.remove("add-block");
 
       for (let j = 0; j < selecting.length; j++) {
         if (j !== i) {
