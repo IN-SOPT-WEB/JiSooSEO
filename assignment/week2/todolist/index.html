@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Courier+Prime&family=Noto+Sans+KR:wght@300&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="title flex"><h1>🌷 To do List 🌷</h1></header>
+    <nav class="flex">
+      <button type="button" id="see-today-button">Today</button>
+      <button type="button" id="see-tomorrow-button">Tomorrow</button>
+      <button type="button" id="see-together-button">Together</button>
+    </nav>
+    <main>
+      <section id="left-section">
+        <header><h3>Today</h3></header>
+        <ul id="todayTaskList"></ul>
+        <footer class="add-tasks">
+          <input
+            type="text"
+            id="addTodayTask"
+            placeholder="오늘 할 일 추가하기"
+          />
+          <button id="addTodayTaskButton" type="submit">+</button>
+        </footer>
+      </section>
+      <section id="right-section">
+        <header><h3>Tomorrow</h3></header>
+        <ul id="tomorrowTaskList"></ul>
+        <footer class="add-tasks">
+          <input
+            type="text"
+            id="addTomorrowTask"
+            placeholder="내일 할 일 추가하기"
+          />
+          <button id="addTomorrowTaskButton" type="submit">+</button>
+        </footer>
+      </section>
+    </main>
+    <footer id="footer-title" class="title flex">
+      Copyright&copy; jisoosoo
+    </footer>
+    <script src="main.js"></script>
+  </body>
+</html>

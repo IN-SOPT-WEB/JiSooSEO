@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
+    />
+  </head>
+
+  <body>
+    <header>
+      <span id="header-left">velog</span>
+      <div id="header-right">
+        <span class="material-symbols-outlined"> light_mode </span>
+        <span class="material-symbols-outlined"> search </span>
+        <a href="write.html">
+           <button type="button" id="new-post-button">새 글 작성</button>
+        </a>
+        <img src="img/profile.png" alt="profile-img" id="profile-img-button">
+
+      </div>
+     
+    </header>
+    <nav>
+      <div class="select">
+        <span class="material-symbols-outlined"> trending_up</span>
+        <p> 트렌딩</p>
+      </div>
+      <div  class="select">
+        <span class="material-symbols-outlined"> schedule </span>
+        <p>최신</p>
+      </div class="select">
+      <!-- <select name="select-date" class="select" id="select-date">
+        <option value="day">오늘</option>
+        <option value="week">이번 주</option>
+        <option value="month">이번 달</option>
+        <option value="year">올해</option>
+      </select> -->
+      <div id="select-date-option">
+        <div id="select-default-date">
+            <p id="select-default-date-text">올해</p>
+            <span class="material-symbols-outlined" id="select-date-button">
+                arrow_drop_down
+            </span>
+        </div>
+        <ul id="select-date-list">
+            <li id="select-day" class="selecting">오늘</li>
+            <li id="select-week" class="selecting select-date-hr">이번 주</li>
+            <li id="select-month" class="selecting select-date-hr">이번 달</li>
+            <li id="select-year" class="selecting select-date-hr">올해</li>
+        </ul>
+    </div>
+
+    </nav>
+    <hr class="nav-hr"/>
+    <section class="card-section">
+        <div class="card">
+            <div class="card-top">
+                <img src="img/1.JPG" alt="thumbnail-img" class="card-img">
+                <div class="card-top-text">
+                    <h3>지수의 필름사진</h3>
+                    <p>구경하고 가세요~</p>
+                </div>
+                <p>4일전 . 8개의 댓글</p>
+            </div>
+            <hr class="card-hr">
+            <div class="card-bottom">
+                <div class="card-bottom-left">
+                    <img src="img/profile.png" alt="profile-img" class="card-profile-img">
+                    <div class="card-profile-writer">&nbsp;by&nbsp; <strong>jisoo</strong></div>
+                </div>
+                <div class="card-bottom-right">
+                    <span class="material-symbols-outlined" id="like">
+                    favorite
+                    </span>
+                    <p>43</p>
+                </div>
+                
+            </div>
+        </div>
+
+        <div class="card">
+          <div class="card-top">
+              <img src="img/2.JPG" alt="thumbnail-img" class="card-img">
+              <div class="card-top-text">
+                  <h3>지수의 필름사진</h3>
+                  <p>구경하고 가세요~</p>
+              </div>
+              <p>4일전 . 8개의 댓글</p>
+          </div>
+          <hr class="card-hr">
+          <div class="card-bottom">
+              <div class="card-bottom-left">
+                  <img src="img/profile.png" alt="profile-img" class="card-profile-img">
+                  <div class="card-profile-writer">&nbsp;by&nbsp; <strong>jisoo</strong></div>
+              </div>
+              <div class="card-bottom-right">
+                  <span class="material-symbols-outlined" id="like">
+                  favorite
+                  </span>
+                  <p>43</p>
+              </div>
+              
+          </div>
+      </div>
+
+      <div class="card">
+        <div class="card-top">
+            <img src="img/3.JPG" alt="thumbnail-img" class="card-img">
+            <div class="card-top-text">
+                <h3>지수의 필름사진</h3>
+                <p>구경하고 가세요~</p>
+            </div>
+            <p>4일전 . 8개의 댓글</p>
+        </div>
+        <hr class="card-hr">
+        <div class="card-bottom">
+            <div class="card-bottom-left">
+                <img src="img/profile.png" alt="profile-img" class="card-profile-img">
+                <div class="card-profile-writer">&nbsp;by&nbsp; <strong>jisoo</strong></div>
+            </div>
+            <div class="card-bottom-right">
+                <span class="material-symbols-outlined" id="like">
+                favorite
+                </span>
+                <p>43</p>
+            </div>
+            
+        </div>
+    </div>
+
+    <div class="card">
+      <div class="card-top">
+          <img src="img/4.JPG" alt="thumbnail-img" class="card-img">
+          <div class="card-top-text">
+              <h3>지수의 필름사진</h3>
+              <p>구경하고 가세요~</p>
+          </div>
+          <p>4일전 . 8개의 댓글</p>
+      </div>
+      <hr class="card-hr">
+      <div class="card-bottom">
+          <div class="card-bottom-left">
+              <img src="img/profile.png" alt="profile-img" class="card-profile-img">
+              <div class="card-profile-writer">&nbsp;by&nbsp; <strong>jisoo</strong></div>
+          </div>
+          <div class="card-bottom-right">
+              <span class="material-symbols-outlined" id="like">
+              favorite
+              </span>
+              <p>43</p>
+          </div>
+          
+      </div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+        <img src="img/5.JPG" alt="thumbnail-img" class="card-img">
+        <div class="card-top-text">
+            <h3>지수의 필름사진</h3>
+            <p>구경하고 가세요~</p>
+        </div>
+        <p>4일전 . 8개의 댓글</p>
+    </div>
+    <hr class="card-hr">
+    <div class="card-bottom">
+        <div class="card-bottom-left">
+            <img src="img/profile.png" alt="profile-img" class="card-profile-img">
+            <div class="card-profile-writer">&nbsp;by&nbsp; <strong>jisoo</strong></div>
+        </div>
+        <div class="card-bottom-right">
+            <span class="material-symbols-outlined" id="like">
+            favorite
+            </span>
+            <p>43</p>
+        </div>
+        
+    </div>
+</div>
+<div class="card">
+  <div class="card-top">
+      <img src="img/6.JPG" alt="thumbnail-img" class="card-img">
+      <div class="card-top-text">
+          <h3>지수의 필름사진</h3>
+          <p>구경하고 가세요~</p>
+      </div>
+      <p>4일전 . 8개의 댓글</p>
+  </div>
+  <hr class="card-hr">
+  <div class="card-bottom">
+      <div class="card-bottom-left">
+          <img src="img/profile.png" alt="profile-img" class="card-profile-img">
+          <div class="card-profile-writer">&nbsp;by&nbsp; <strong>jisoo</strong></div>
+      </div>
+      <div class="card-bottom-right">
+          <span class="material-symbols-outlined" id="like">
+          favorite
+          </span>
+          <p>43</p>
+      </div>
+      
+  </div>
+</div>
+
+<div class="card">
+    <div class="card-top">
+        <img src="img/7.JPG" alt="thumbnail-img" class="card-img">
+        <div class="card-top-text">
+            <h3>지수의 필름사진</h3>
+            <p>구경하고 가세요~</p>
+        </div>
+        <p>4일전 . 8개의 댓글</p>
+    </div>
+    <hr class="card-hr">
+    <div class="card-bottom">
+        <div class="card-bottom-left">
+            <img src="img/profile.png" alt="profile-img" class="card-profile-img">
+            <div class="card-profile-writer">&nbsp;by&nbsp; <strong>jisoo</strong></div>
+        </div>
+        <div class="card-bottom-right">
+            <span class="material-symbols-outlined" id="like">
+            favorite
+            </span>
+            <p>43</p>
+        </div>
+        
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-top">
+        <img src="img/8.JPG" alt="thumbnail-img" class="card-img">
+        <div class="card-top-text">
+            <h3>지수의 필름사진</h3>
+            <p>구경하고 가세요~</p>
+        </div>
+        <p>4일전 . 8개의 댓글</p>
+    </div>
+    <hr class="card-hr">
+    <div class="card-bottom">
+        <div class="card-bottom-left">
+            <img src="img/profile.png" alt="profile-img" class="card-profile-img">
+            <div class="card-profile-writer">&nbsp;by&nbsp; <strong>jisoo</strong></div>
+        </div>
+        <div class="card-bottom-right">
+            <span class="material-symbols-outlined" id="like">
+            favorite
+            </span>
+            <p>43</p>
+        </div>
+        
+    </div>
+  </div>
+  
+    </section>
+    <script src="main.js"></script>
+
+  </body>
+</html>

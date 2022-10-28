@@ -1,0 +1,244 @@
+body{
+    width: 1024px;
+    font-size: 1.2rem;
+    background-color: #F8F9FA;
+}
+#header-left{
+    font-family: 'Courier Prime', monospace;
+    font-weight: bold;
+    font-size: 2rem;
+}
+#new-post-button{
+    border:1px solid black;
+    background-color: white;
+    border-radius: 30px;
+    padding: 0.5vw 1.5vw;
+    font-size: 1rem;
+}
+#new-post-button:hover{
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}
+#profile-img-button{
+    width: 4vw;
+    height: 4vw;
+    border: 1px solid black;
+    border-radius: 50px;
+    margin-left: 20px;
+}
+nav{
+    display: flex;
+    width: 30%;
+    justify-content: space-between;
+    margin-top: 2vw;
+    align-items: flex-start;
+    z-index: 2;
+    position: relative;
+}
+.select{
+    display: flex;
+    align-items: center;
+}
+p{
+    margin: 0em;
+}
+.nav-hr{
+    width: 100px;
+    float: left;
+    border: 1px solid black;
+    background-color: #777777;
+}
+header{
+    display: flex;
+    justify-content: space-between;
+    margin: 1vw 0vw;
+}
+.material-symbols-outlined{
+    margin-right: 0.5vw;
+}
+header>.material-symbols-outlined{
+    font-size: 2rem;
+}
+#header-right{
+    display: flex;
+    align-items: center;
+}
+#select-date{
+    width: 30%;
+    color: #777777;
+    font-size: 1rem;
+}
+.card{
+    background-color: white;
+    /* width: 31%; */
+    /* width: 320px; */
+    width: 299px;
+    /* width: 20vw; */
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0px 0px 25px 5px rgb(234, 233, 233);
+    margin-bottom: 1.4em;
+    margin-right: 1vw;
+
+}
+.card:hover{
+    box-shadow: 0px 0px 25px 5px rgb(201, 201, 201);
+    margin-top: -0.5em;
+    margin-bottom: 1.9em;
+    cursor: pointer;
+}
+
+.card-img{
+    width: 100%;
+    height: 180px;
+}
+.card-bottom{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0.5em;
+}
+.card-top-text{
+    height: 50px;
+    margin: 0.5em 1em;
+    font-size: 1rem;
+}
+.card-top>p{
+    margin: 0em 4em 2em 4em;
+    color: #9c9c9c;
+    font-size: 0.2em;
+}
+.card-profile-img{
+    width: 10%;
+    border-radius: 50px;
+    border: 0.5px solid black;
+}
+.card-profile-writer{
+    margin-left: 0.5vw;
+    color: #9c9c9c;
+   
+}
+.card-profile-writer>strong{
+    color: black;
+
+}
+.card-bottom-left, .card-bottom-right{
+    display: flex;
+    font-size: 0.7em;
+    align-items: center;
+}
+#like{
+    font-size: 1.2em;
+}
+h3{
+    margin: 0em;
+}
+.card-hr{
+    border:1px solid #e0e0e1;
+    background-color: #e0e0e1;
+}
+.card-section{
+    margin-top: 2.5em;
+    display: flex;
+    justify-content: start;
+    /* flex-wrap: wrap; */
+    overflow: hidden;
+}
+
+#select-date-list{
+    border: 1px solid white;
+    border-radius: 3px;
+    display: none;
+    cursor: pointer;
+    background-color: white;
+    box-shadow: 0px 0px 25px -5px #c4c4c4;
+    font-size: 1rem;
+    width: 60%;
+    position: absolute;
+    z-index: 2;
+    left: 45%;
+    top: 100%;
+    list-style:none;
+    padding-left:0px;
+}
+#select-date-list>.select-date-hr{
+    border-top: 1px solid #777777;
+}
+#select-date-list>li{
+    padding: 10px;
+}
+#select-date-button{
+    cursor: pointer;
+    margin-right:0vw
+}
+#select-default-date{
+    display: flex;
+    align-items: center;
+    font-size: 1.1rem;
+    padding: 3px;
+    border: 1px solid white;
+    border-radius: 3px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-left: 10px;
+    background-color: white;
+    box-shadow: 0px 0px 25px -5px #c4c4c4;
+    width: 100%;
+    /* position: absolute;
+    z-index: 2; */
+    /* left: 120%; */
+    justify-content: space-between;
+}
+.data-list-showing{
+    color:#777777;
+    cursor: pointer;
+}
+.date-font-color{
+    color:steelblue;
+}
+.card-modal-style{
+    width: 200%;
+    height: 100%;
+    position: absolute;
+    left: -50%;
+    top: 10%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgba(95, 95, 95, 0.8);
+    backdrop-filter: blur(1.5px);
+}
+.card-modal-background{
+    background-color: rgba(95, 95, 95);
+    overflow: hidden;
+}
+.card-modal-selecting-color{
+    background-color: rgba(95, 95, 95,0.2)!important; 
+    border-color: rgba(95, 95, 95,0.2)!important;
+    filter: blur(1.5px);
+    -webkit-filter: blur(1.5px);
+}
+.card-container{
+    display: flex;
+}
+.carousel{
+    display: flex;
+    align-items: center;
+    margin-top:30px;
+}
+#left-button, #right-button{
+    height: 300px;
+    margin-top: 20px;
+}
+/* 1024 이상 */
+@media (min-width: 1024px) {
+    body{
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%,0%);
+    }
+    
+  }
