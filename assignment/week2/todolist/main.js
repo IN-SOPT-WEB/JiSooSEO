@@ -122,7 +122,7 @@ function submitTomorrowClick(e) {
   addTomorrowTask(addTomorrowValue);
 }
 todayInput.addEventListener("keypress", (e) => {
-  if (e.keyCode === 13) {
+  if (e.key === "Enter") {
     submitTodayClick(e); // 여긴 왜... 괄호에 e를 꼭 넣어주어야하는가?
   }
 });
