@@ -6,11 +6,7 @@ const defaultDate = document.querySelector("#select-default-date-text");
 
 function showDateList() {
   let dateListStatus = dateList.style.display;
-  if (dateListStatus === "block") {
-    document.querySelector("#select-date-list").classList.remove("add-block");
-  } else {
-    document.querySelector("#select-date-list").classList.add("add-block");
-  }
+    document.querySelector("#select-date-list").classList.toggle("add-block");
   console.log(selecting);
   for (let i = 0; i < selecting.length; i++) {
     selecting[i].addEventListener("click", function () {
