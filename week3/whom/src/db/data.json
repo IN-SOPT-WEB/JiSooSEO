@@ -1,0 +1,9 @@
+{
+    "toystory":[
+        {"id":1, "img":"img/우디.jpeg","name":"우디"},
+        {"id":2, "img":"img/버즈.png","name":"버즈"},
+        {"id":3, "img":"img/제시.png","name":"제시"},
+        {"id":4, "img": "img/미스터포테이토.jpeg","name":"미스터포테이토"},
+        {"id":5, "img":"img/알린.jpeg","name":"알린"}
+    ]
+}
