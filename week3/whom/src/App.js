@@ -1,25 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import Header from "./Header";
+import Score from "./Score";
+import Main from "./Main";
+import Again from "./Again";
+import styled from "styled-components";
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Dom>
+      <Header />
+      <Score />
+      <Main />
+      <Again />
+    </Dom>
   );
-}
+};
 
 export default App;
+
+const Dom = styled.section`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+`;
