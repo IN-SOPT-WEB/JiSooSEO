@@ -1,7 +1,7 @@
-import Header from "./Header";
-import Score from "./Score";
-import Main from "./Main";
-import Again from "./Again";
+import Header from "./components/Header";
+import Score from "./components/Score";
+import Main from "./components/Main";
+import Again from "./components/Again";
 import styled from "styled-components";
 
 const App = () => {

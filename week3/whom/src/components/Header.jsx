@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export default function Header() {
     return (
-      <HeaderDom>🫶 웹 쨩 🫶</HeaderDom>
+      <HeaderDom>🧸 토이스토리 🧸</HeaderDom>
     )
   }
 
