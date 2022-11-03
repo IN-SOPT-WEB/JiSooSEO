@@ -1,9 +1,9 @@
 {
     "toystory":[
-        {"id":1, "img":"img/woody.png","name":"우디"},
-        {"id":2, "img":"img/buzz.png","name":"버즈"},
-        {"id":3, "img":"img/jessie.png","name":"제시"},
-        {"id":4, "img": "img/mrpotato.png","name":"미스터포테이토"},
-        {"id":5, "img":"img/alien.png","name":"알린"}
+        {"id":1, "img":"img/woody.png","answer":"우디", "list":["우디", "버즈", "앤디","랏소","햄"]},
+        {"id":2, "img":"img/buzz.png","answer":"버즈", "list":["렉스","슬링키","버즈","앤디","우디"]},
+        {"id":3, "img":"img/jessie.png","answer":"제시", "list":["보핍","보니","돌리","제시","바비"]},
+        {"id":4, "img": "img/mrpotato.png","answer":"미스터포테이토", "list":["랏소","햄","알린","미세스포테이토","미스터포테이토","켄"]},
+        {"id":5, "img":"img/alien.png","answer":"알린", "list":["알린","포키","더키","버즈","돌리"]}
     ]
 }
