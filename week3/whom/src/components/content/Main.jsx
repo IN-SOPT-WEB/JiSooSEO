@@ -1,8 +1,10 @@
 import styled from "styled-components";
-import data from "../db/data.json";
+import data from "../../db/data.json";
 import { useState,useEffect } from "react";
 import Score from "./Score";
 import Again from "./Again";
+import Modal from '../modal/Modal';
+import Portal from "../modal/Portal";
 
 export default function Main() {
   const [id, setId] = useState(1)//첫 시작을 1로 하고, 정답을 맞출때마다 +1이 되도록. 정답을 모두 맞춰서 id가 6이 되면 종료한다.
@@ -10,6 +12,9 @@ export default function Main() {
   const [list, setlist] = useState(`${data.toystorys.filter((toystory)=>toystory.id===id)[0].list}`.split(","))//data로부터 리스트 읽어오기
   const [answer,setAnswer] = useState(`${data.toystorys.filter((toystory)=>toystory.id===id)[0].answer}`)//data로부터 정답 읽어오기
   const [score,setScore]=useState(0)
+  const [correct,setCorrect]=useState("1")
+  const [modalOn, setModalOn] = useState(false);
+
   useEffect(() => {
     
   }, [score,setScore])
@@ -23,13 +28,15 @@ export default function Main() {
       setlist(`${data.toystorys.filter((toystory)=>toystory.id===id+1)[0].list}`.split(","))//split이용해서 읽어온 스트링을 리스트화했다
       setAnswer(`${data.toystorys.filter((toystory)=>toystory.id===id+1)[0].answer}`)
       setScore(score+1)
+      setCorrect("1")
 
-      console.log("사진"+img)
-      console.log("정답지"+list)
-      console.log("정답"+answer)
-      console.log("id"+id)      
+      console.log("correct"+correct)     
+      handleModal()
     }
-    else{}
+    else{
+      setCorrect("0")
+      handleModal()
+    }
   }
   const againClick=()=>{
     setId(1)
@@ -41,11 +48,16 @@ export default function Main() {
     console.log("다시하기")
   }
 
+  const handleModal = () => {
+    setModalOn(!modalOn);
+  };
+
     return (
       <>
       <Score score={score}/>
       {score===5?(<EndDom><EndImg src="img/toystory.png" alt="#"/><Font>끝</Font></EndDom>):(
       <>
+      {{correct}==="1"?(<Portal>{modalOn && <Modal correct={correct} onClose={handleModal}></Modal>}</Portal>):(<Portal>{modalOn && <Modal correct={correct} onClose={handleModal}></Modal>}</Portal>)}
       <img src={img} alt="#" />
       <AnswerButtonDom> 
         {/* map함수로 정답후보 리스트 하나씩 읽어오기 */}
@@ -53,9 +65,7 @@ export default function Main() {
       </AnswerButtonDom>
       </>
       )}
-      <section  onClick={()=>againClick()}>
-        <Again/>
-      </section>
+        <Again onClick={()=>againClick()}/>
       
       </>
     )

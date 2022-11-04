@@ -1,8 +1,8 @@
 import styled from "styled-components"
 
-export default function Again() {
+export default function Again({onClick}) {
     return (
-      <AgainDom>다시하기</AgainDom>
+      <AgainDom onClick={()=>onClick()}>다시하기</AgainDom>
     )
   }
 
