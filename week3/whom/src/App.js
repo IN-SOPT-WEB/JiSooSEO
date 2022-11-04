@@ -6,12 +6,14 @@ import styled from "styled-components";
 
 const App = () => {
   return (
-    <Dom>
-      <Header />
-      <Score />
-      <Main />
-      <Again />
-    </Dom>
+    <BodyDom>
+      <Dom>
+        <Header />
+        {/* <Score /> */}
+        <Main />
+        {/* <Again /> */}
+      </Dom>
+    </BodyDom>
   );
 };
 
@@ -22,4 +24,13 @@ const Dom = styled.section`
   flex-direction: column;
   justify-content: center;
   text-align: center;
+  width: 500px;
+`;
+const BodyDom = styled.section`
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 `;

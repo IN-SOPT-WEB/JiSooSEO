@@ -1,10 +1,8 @@
 import styled from "styled-components";
-import { useState } from "react";
 
-export default function Score() {
-    const [score,setScore] = useState(0)
+export default function Score(props) {//props로 스코어값 받아오기
     return (
-      <ScoreDom>{score} 점</ScoreDom>
+      <ScoreDom>{props.score} 점</ScoreDom>
     )
   }
 
