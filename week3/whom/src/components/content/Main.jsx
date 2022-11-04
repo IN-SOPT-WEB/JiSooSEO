@@ -44,7 +44,7 @@ export default function Main() {
     setImg(`${data.toystorys.filter((toystory)=>toystory.id===1)[0].img}`) //가장 처음으로 돌아감
     setlist(`${data.toystorys.filter((toystory)=>toystory.id===1)[0].list}`.split(","))
     setAnswer(`${data.toystorys.filter((toystory)=>toystory.id===1)[0].answer}`)
-    setCorrect("0")
+    setCorrect("1")
     console.log("다시하기")
   }
 
@@ -55,7 +55,7 @@ export default function Main() {
     return (
       <>
       <Score score={score}/>
-      {score===5?(<EndDom><EndImg src="img/toystory.png" alt="#"/><AnswerButton>끝</AnswerButton></EndDom>):(
+      {score===5?(<>{{correct}==="1"?(<Portal>{modalOn && <Modal correct={correct} onClose={handleModal}></Modal>}</Portal>):(<Portal>{modalOn && <Modal correct={correct} onClose={handleModal}></Modal>}</Portal>)}<EndDom><EndImg src="img/toystory.png" alt="#"/><AnswerButton>끝</AnswerButton></EndDom></>):(
       <>
       {{correct}==="1"?(<Portal>{modalOn && <Modal correct={correct} onClose={handleModal}></Modal>}</Portal>):(<Portal>{modalOn && <Modal correct={correct} onClose={handleModal}></Modal>}</Portal>)}
       <img src={img} alt="#" />
