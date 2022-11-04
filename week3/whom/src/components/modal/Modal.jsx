@@ -2,7 +2,7 @@ import styled from "styled-components";
 export default function Modal({correct,onClose}) {
     return(
     <ModalDom>
-        {correct==="1"?(<Dom>정답입니다!</Dom>):(<Dom>오답</Dom>)}
+        {correct==="1"?(<Dom><Img src="img/correct.png" alt="#"/>잘했어 친구!</Dom>):(<Dom><Img src="img/wrong.png" alt="#"/>장난해 친구?</Dom>)}
         <Button onClick={()=>onClose()}>X</Button>
     </ModalDom>);
 }
@@ -22,9 +22,11 @@ const ModalDom=styled.section`
     align-items: center;
     font-size: 15pt;
     border-radius: 10px;
+    overflow: hidden;
 `
-const Dom=styled.article`
+const Dom=styled.div`
     font-size: 15pt;
+    text-align: center;
 `
 const Button=styled.button`
     border:0px;
@@ -35,4 +37,8 @@ const Button=styled.button`
     width: 40px;
     font-size: 15pt;
     height: 40px;
+`
+const Img=styled.img`
+        width: 400px;
+    height: 305px;
 `

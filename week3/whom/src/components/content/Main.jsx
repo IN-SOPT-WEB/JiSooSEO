@@ -44,7 +44,7 @@ export default function Main() {
     setImg(`${data.toystorys.filter((toystory)=>toystory.id===1)[0].img}`) //가장 처음으로 돌아감
     setlist(`${data.toystorys.filter((toystory)=>toystory.id===1)[0].list}`.split(","))
     setAnswer(`${data.toystorys.filter((toystory)=>toystory.id===1)[0].answer}`)
-
+    setCorrect("0")
     console.log("다시하기")
   }
 
@@ -55,7 +55,7 @@ export default function Main() {
     return (
       <>
       <Score score={score}/>
-      {score===5?(<EndDom><EndImg src="img/toystory.png" alt="#"/><Font>끝</Font></EndDom>):(
+      {score===5?(<EndDom><EndImg src="img/toystory.png" alt="#"/><AnswerButton>끝</AnswerButton></EndDom>):(
       <>
       {{correct}==="1"?(<Portal>{modalOn && <Modal correct={correct} onClose={handleModal}></Modal>}</Portal>):(<Portal>{modalOn && <Modal correct={correct} onClose={handleModal}></Modal>}</Portal>)}
       <img src={img} alt="#" />
@@ -84,17 +84,17 @@ const AnswerButton=styled.button`
   background-color: skyblue;
   cursor: pointer;
 `
-const Font=styled.h1`
-  position: absolute;
-  z-index: 2;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+// const Font=styled.h1`
+//   position: absolute;
+//   z-index: 2;
+//   top: 50%;
+//   left: 50%;
+//   transform: translate(-50%, -50%);
 
-`
+// `
 const EndImg=styled.img`
-  position: relative;
-  z-index: 1;
+  /* position: relative;
+  z-index: 1; */
   width: 500px;
 `
 const EndDom=styled.section`
