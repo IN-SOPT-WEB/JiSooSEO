@@ -10,4 +10,5 @@ const AgainDom=styled.h1`
     background-color: gray;
     padding: 10px;
     margin:0;
+    cursor: pointer;
 `

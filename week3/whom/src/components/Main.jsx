@@ -20,7 +20,7 @@ export default function Main() {
       setId(id+1) 
       console.log(id)
       setImg(`${data.toystorys.filter((toystory)=>toystory.id===id+1)[0].img}`) //비동기 이슈로 id에 +1을 더해주었다
-      setlist(`${data.toystorys.filter((toystory)=>toystory.id===id+1)[0].list}`.split(","))
+      setlist(`${data.toystorys.filter((toystory)=>toystory.id===id+1)[0].list}`.split(","))//split이용해서 읽어온 스트링을 리스트화했다
       setAnswer(`${data.toystorys.filter((toystory)=>toystory.id===id+1)[0].answer}`)
       setScore(score+1)
 
@@ -30,6 +30,15 @@ export default function Main() {
       console.log("id"+id)      
     }
     else{}
+  }
+  const againClick=()=>{
+    setId(1)
+    setScore(0)
+    setImg(`${data.toystorys.filter((toystory)=>toystory.id===1)[0].img}`) //가장 처음으로 돌아감
+    setlist(`${data.toystorys.filter((toystory)=>toystory.id===1)[0].list}`.split(","))
+    setAnswer(`${data.toystorys.filter((toystory)=>toystory.id===1)[0].answer}`)
+
+    console.log("다시하기")
   }
 
     return (
@@ -44,7 +53,10 @@ export default function Main() {
       </AnswerButtonDom>
       </>
       )}
-      <Again/>
+      <section  onClick={()=>againClick()}>
+        <Again/>
+      </section>
+      
       </>
     )
   }
