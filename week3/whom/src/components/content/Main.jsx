@@ -55,7 +55,7 @@ export default function Main() {
     return (
       <>
       <Score score={score}/>
-      {score===5?(<>{{correct}==="1"?(<Portal>{modalOn && <Modal correct={correct} onClose={handleModal}></Modal>}</Portal>):(<Portal>{modalOn && <Modal correct={correct} onClose={handleModal}></Modal>}</Portal>)}<EndDom><EndImg src="img/toystory.png" alt="#"/><AnswerButton>끝</AnswerButton></EndDom></>):(
+      {score===5?(<>{{correct}==="1"?(<Portal>{modalOn && <Modal correct={correct} onClose={handleModal}></Modal>}</Portal>):(<Portal>{modalOn && <Modal correct={correct} onClose={handleModal}></Modal>}</Portal>)}<><EndImg src="img/toystory.png" alt="#"/><Font>끝</Font></></>):(
       <>
       {{correct}==="1"?(<Portal>{modalOn && <Modal correct={correct} onClose={handleModal}></Modal>}</Portal>):(<Portal>{modalOn && <Modal correct={correct} onClose={handleModal}></Modal>}</Portal>)}
       <img src={img} alt="#" />
@@ -84,19 +84,16 @@ const AnswerButton=styled.button`
   background-color: skyblue;
   cursor: pointer;
 `
-// const Font=styled.h1`
-//   position: absolute;
-//   z-index: 2;
-//   top: 50%;
-//   left: 50%;
-//   transform: translate(-50%, -50%);
-
-// `
-const EndImg=styled.img`
-  /* position: relative;
-  z-index: 1; */
-  width: 500px;
+const Font=styled.h1`
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-size: 50pt;
+    margin: 0;
+    padding: 0;
 `
-const EndDom=styled.section`
-  /* position: absolute; */
+const EndImg=styled.img`
+  width: 500px;
 `
