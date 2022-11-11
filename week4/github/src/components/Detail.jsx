@@ -1,33 +1,50 @@
-import React from 'react';
 import styled,{css} from "styled-components"
+import axios from "axios";
+import { useState, useEffect } from 'react';
 
 const Detail = () => {
+    const [data,setData]=useState([]);//받아올 깃헙 정보들을 data변수로 설정했습니다
+
+    async function getGithubProfile() {
+        const response = await axios.get("https://api.github.com/users/seojisoosoo");
+        console.log("data", response);
+        setData(response.data);
+    }
+
+    useEffect(() => {
+        getGithubProfile();
+    }, []);
+
+    
+
     return (
         <Box>
             <XButton>X</XButton>
-            <Img src="#" alt="#"/>
-            <GitId>aaaaa</GitId>
-            <Name>ddddd</Name>
-            <Url>button</Url>
+            <Img src={data.avatar_url} alt="#"/>
+            <GitId>{data.login}</GitId>
+            <Name>{data.name}</Name>
+            <a href={data.html_url}>
+                <Url>visit {data.name}</Url>
+            </a>
             <NumTagFlex>
                 <NumTag>
-                    <p>Followers</p>
-                    <p>22</p>
+                    <span>Followers</span>
+                    <span>{data.followers}</span>
                 </NumTag>
                 <NumTag>
-                <p>Following</p>
-                    <p>22</p>
+                    <span>Following</span>
+                    <span>{data.following}</span>
 
                 </NumTag>
                 <NumTag>
-                <p>Repos</p>
-                    <p>22</p>
-
+                    <span>Repos</span>
+                    <span>{data.public_repos}</span>
                 </NumTag>
 
             </NumTagFlex>
         </Box>
     );
+   
 };
 
 export default Detail;
