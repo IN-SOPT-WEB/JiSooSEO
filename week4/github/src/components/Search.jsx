@@ -1,28 +1,48 @@
 import styled from 'styled-components'
 import { useNavigate, Outlet} from 'react-router-dom';
-import { useRef } from 'react';
+import { Fragment, useRef, useState } from 'react';
 
 const Search = () => {
     const navigate=useNavigate()
     const searchRef = useRef(null)
-    // const searchId=searchRef.current.value
+    const [historyArr, setHistoryArr] = useState([])
+    const [historyShow, setHistoryShow] = useState(false)
+    const [value, setValue]=useState()
 
     const search=(url, id)=>{
         navigate(url, {state:{id:id}}) // Detail페이지로 넘어가면서, 유저로그인 정보를 같이 넘겨주었습니다
     }
     const onKeyPress=(e)=>{
-        // console.log(searchRef.current.value)
         if(e.key==="Enter"){
-            search(`/search/${searchRef.current.value}`,searchRef.current.value);
+            let searchId=searchRef.current.value
+            console.log(searchId)
+            setHistoryArr([searchId,...historyArr]) //기존 배열값에서 추가
+
+            search(`/search/${searchId}`,searchId);
         }
+        setHistoryShow(false)
     }
+    console.log(historyArr)
+    const historyVisible=()=>{
+        setHistoryShow(true)
+    }
+    const historyClick=(history)=>{
+        search(history,history);
+        setHistoryShow(false)
+        setValue(history)
+    }
+    const historyDelete=(history)=>{
+        setHistoryArr(historyArr.filter(word=>word!==history))//필터링해서 다시 set
+    }
+
     return (
         <>
         <Box>
             <Title>
                 Github Profile Finder
             </Title>
-            <UserNameInput placeholder='Github Username...' onKeyPress={onKeyPress} ref={searchRef}/>
+            <UserNameInput placeholder='Github Username...' onClick={historyVisible} onKeyPress={onKeyPress} ref={searchRef} value={value}/>
+            {historyShow&&(<>{historyArr.map((history,i)=><HistoryFlex key={i}><Font onClick={()=>historyClick(history)}>{history}</Font><XButton onClick={()=>historyDelete(history)}>x</XButton></HistoryFlex>)}</>)}
             <Outlet/>
         </Box>
         </>
@@ -32,6 +52,19 @@ const Search = () => {
 
 export default Search;
 
+const HistoryFlex=styled.section`
+    display: flex;
+
+`
+const Font=styled.span`
+    margin: 0;
+    float: left;
+`
+const XButton=styled.button`
+    border:1px solid transparent;
+    background-color: transparent;
+    
+`
 const Box=styled.section`
     width: 50rem;
     height: 10rem;
