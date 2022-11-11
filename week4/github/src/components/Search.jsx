@@ -54,16 +54,19 @@ export default Search;
 
 const HistoryFlex=styled.section`
     display: flex;
-
+    border:1px solid transparent;
+    background-color: #90a1ba;
+    width: 17rem;
+    justify-content: space-between;
+    padding: 0.2rem;
 `
 const Font=styled.span`
     margin: 0;
-    float: left;
 `
 const XButton=styled.button`
     border:1px solid transparent;
-    background-color: transparent;
-    
+    background-color: #6f829e;
+
 `
 const Box=styled.section`
     width: 50rem;
