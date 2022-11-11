@@ -7,7 +7,6 @@ const Search = () => {
     const searchRef = useRef(null)
     const [historyArr, setHistoryArr] = useState([])
     const [historyShow, setHistoryShow] = useState(false)
-    const [value, setValue]=useState()
 
     const search=(url, id)=>{
         navigate(url, {state:{id:id}}) // Detail페이지로 넘어가면서, 유저로그인 정보를 같이 넘겨주었습니다
@@ -29,10 +28,11 @@ const Search = () => {
     const historyClick=(history)=>{
         search(history,history);
         setHistoryShow(false)
-        setValue(history)
+        searchRef.current.value=history
     }
     const historyDelete=(history)=>{
         setHistoryArr(historyArr.filter(word=>word!==history))//필터링해서 다시 set
+        searchRef.current.value=null
     }
 
     return (
@@ -41,10 +41,11 @@ const Search = () => {
             <Title>
                 Github Profile Finder
             </Title>
-            <UserNameInput placeholder='Github Username...' onClick={historyVisible} onKeyPress={onKeyPress} ref={searchRef} value={value}/>
+            <UserNameInput placeholder='Github Username...' onClick={historyVisible} onKeyPress={onKeyPress} ref={searchRef}/>
             {historyShow&&(<>{historyArr.map((history,i)=><HistoryFlex key={i}><Font onClick={()=>historyClick(history)}>{history}</Font><XButton onClick={()=>historyDelete(history)}>x</XButton></HistoryFlex>)}</>)}
-            <Outlet/>
         </Box>
+        <Outlet/>
+
         </>
         
     );
