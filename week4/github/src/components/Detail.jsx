@@ -6,7 +6,6 @@ import {useNavigate,useLocation} from "react-router-dom"
 const Detail = () => {
     const [data,setData]=useState([]); //받아올 깃헙 정보들을 data변수로 설정했습니다
     const {state}=useLocation(); //useNavigate으로 넘겼던 유저로그인 정보를 받아옵니다
-    console.log(state.id)
     const navigate=useNavigate()
 
     async function getGithubProfile() {
@@ -20,7 +19,10 @@ const Detail = () => {
     }, []);
 
     
-    if (!data) return <div>Loading . . .</div>;
+    if (!data){
+        console.log("데이터 없다")
+        return <div>Loading . . .</div>;
+    } 
 
     return (
         <>
@@ -35,16 +37,16 @@ const Detail = () => {
             <NumTagFlex>
                 <NumTag>
                     <span>Followers</span>
-                    <span>{data.followers}</span>
+                    <Font>{data.followers}</Font>
                 </NumTag>
                 <NumTag>
                     <span>Following</span>
-                    <span>{data.following}</span>
+                    <Font>{data.following}</Font>
 
                 </NumTag>
                 <NumTag>
                     <span>Repos</span>
-                    <span>{data.public_repos}</span>
+                    <Font>{data.public_repos}</Font>
                 </NumTag>
 
             </NumTagFlex>
@@ -70,21 +72,35 @@ const Box=styled.section`
     border:solid 1px;
     border-radius: 2rem;
     background-color: #2a3568d6;
-    margin-top: 1rem;
-    position: relative;
+    position: absolute;
+    top: 55%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    
     ${Flex}
 `
 const Img=styled.img`
-    
+    width: 10rem;
+    margin-top: -3%;
 `
 const GitId=styled.h1`
-    
+    margin:1rem;
+    font-size: 20pt;
+    color: white;
 `
-const Name=styled.h1`
-    
+const Name=styled.p`
+    margin: 0;
+    font-size: 20pt;
+    color: white;
 `
 const Url=styled.button`
-    
+    margin:1rem;
+    font-size: 11pt;
+    border: 1px solid white;
+    border-radius: 5rem;
+    background-color: transparent;
+    color: white;
+    padding: 0.3rem 1rem;
 `
 const NumTagFlex=styled.section`
     width: 50rem;
@@ -93,13 +109,23 @@ const NumTagFlex=styled.section`
 `
 const NumTag=styled.section`
     width: 7rem;
-    height: 7rem;
-    border:solid 1px;
+    height: 5rem;
+    border:solid 1px transparent;
     border-radius: 1.5rem;
     background-color: #2a3568d6;
+    color: white;
     ${Flex}
+`
+const Font=styled.h1`
+    margin: 0;
+    font-size: 20pt;
 `
 const XButton=styled.button`
     border: 1px solid transparent;
     background-color: transparent;
+    margin-left: 91%;
+    margin-top: -3%;
+    font-size: 25pt;
+    cursor: pointer;
+    color: white;
 `

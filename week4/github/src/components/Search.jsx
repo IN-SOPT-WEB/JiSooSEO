@@ -42,7 +42,6 @@ const Box=styled.section`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    position: relative;
 `
 const Title=styled.h1`
     color:white;
