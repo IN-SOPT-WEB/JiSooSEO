@@ -3,13 +3,21 @@ import styled from 'styled-components'
 import Detail from './Detail';
 
 const Search = () => {
+    const submit=()=>{
+        alert("aaa")
+    }
+    const onKeyPress=(e)=>{
+        if(e.key==="Enter"){
+            submit();
+        }
+    }
     return (
         <>
         <Box>
             <Title>
                 Github Profile Finder
             </Title>
-            <UserNameInput placeholder='Github Username...'/>
+            <UserNameInput placeholder='Github Username...' onKeyPress={onKeyPress}/>
         </Box>
         <Detail/>
         </>
