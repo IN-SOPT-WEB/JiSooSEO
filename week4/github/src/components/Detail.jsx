@@ -2,16 +2,21 @@ import styled,{css} from "styled-components"
 import axios from "axios";
 import { useState, useEffect } from 'react';
 import {useNavigate,useLocation} from "react-router-dom"
+import spinner from "../assets/spinner.gif"
 
 const Detail = () => {
     const [data,setData]=useState([]); //받아올 깃헙 정보들을 data변수로 설정했습니다
     const {state}=useLocation(); //useNavigate으로 넘겼던 유저로그인 정보를 받아옵니다
     const navigate=useNavigate()
+    const [loading, setLoading] = useState(false);
+
 
     async function getGithubProfile() {
+        setLoading(true);
         const response = await axios.get("https://api.github.com/users/"+state.id);
         console.log("data", response);
         setData(response.data);
+        setLoading(false);
     }
 
     useEffect(() => {
@@ -19,11 +24,9 @@ const Detail = () => {
     }, []);
 
     
-    if (!data){
-        console.log("데이터 없다")
-        return <div>Loading . . .</div>;
-    } 
-
+    if (loading) {
+      return <><img src={spinner} alt="로딩중"/></>;
+    }
     return (
         <>
         <Box>
