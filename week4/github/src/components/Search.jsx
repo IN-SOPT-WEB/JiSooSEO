@@ -1,14 +1,19 @@
-import React from 'react';
 import styled from 'styled-components'
-import Detail from './Detail';
+import { useNavigate, Outlet} from 'react-router-dom';
+import { useRef } from 'react';
 
 const Search = () => {
-    const submit=()=>{
-        alert("aaa")
+    const navigate=useNavigate()
+    const searchRef = useRef(null)
+    // const searchId=searchRef.current.value
+
+    const search=(url, id)=>{
+        navigate(url, {state:{id:id}}) // Detail페이지로 넘어가면서, 유저로그인 정보를 같이 넘겨주었습니다
     }
     const onKeyPress=(e)=>{
+        // console.log(searchRef.current.value)
         if(e.key==="Enter"){
-            submit();
+            search(`/search/${searchRef.current.value}`,searchRef.current.value);
         }
     }
     return (
@@ -17,9 +22,9 @@ const Search = () => {
             <Title>
                 Github Profile Finder
             </Title>
-            <UserNameInput placeholder='Github Username...' onKeyPress={onKeyPress}/>
+            <UserNameInput placeholder='Github Username...' onKeyPress={onKeyPress} ref={searchRef}/>
+            <Outlet/>
         </Box>
-        <Detail/>
         </>
         
     );
@@ -37,6 +42,7 @@ const Box=styled.section`
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    position: relative;
 `
 const Title=styled.h1`
     color:white;
