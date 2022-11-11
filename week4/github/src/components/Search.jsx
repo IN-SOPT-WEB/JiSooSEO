@@ -5,8 +5,8 @@ import { Fragment, useRef, useState } from 'react';
 const Search = () => {
     const navigate=useNavigate()
     const searchRef = useRef(null)
-    const [historyArr, setHistoryArr] = useState([])
-    const [historyShow, setHistoryShow] = useState(false)
+    const [historyArr, setHistoryArr] = useState([])//history 배열
+    const [historyShow, setHistoryShow] = useState(false)//history 보이기 여부
 
     const search=(url, id)=>{
         navigate(url, {state:{id:id}}) // Detail페이지로 넘어가면서, 유저로그인 정보를 같이 넘겨주었습니다
@@ -14,25 +14,24 @@ const Search = () => {
     const onKeyPress=(e)=>{
         if(e.key==="Enter"){
             let searchId=searchRef.current.value
-            console.log(searchId)
-            setHistoryArr([searchId,...historyArr]) //기존 배열값에서 추가
+            setHistoryArr([searchId,...historyArr]) //기존 배열값에 새로운 search내용 추가
 
-            search(`/search/${searchId}`,searchId);
+            search(searchId,searchId);
+
         }
-        setHistoryShow(false)
+        setHistoryShow(false)//페이지가 나올때는 history가 안 보인다
     }
-    console.log(historyArr)
     const historyVisible=()=>{
-        setHistoryShow(true)
+        setHistoryShow(true) //input창 클릭시에는 history가 보인다
     }
     const historyClick=(history)=>{
         search(history,history);
-        setHistoryShow(false)
-        searchRef.current.value=history
+        setHistoryShow(false) //history클릭하면 더이상 history안 보인다
+        searchRef.current.value=history //history클릭하면 input 창의 내용도 그 history로 바뀐다
     }
     const historyDelete=(history)=>{
         setHistoryArr(historyArr.filter(word=>word!==history))//필터링해서 다시 set
-        searchRef.current.value=null
+        searchRef.current.value=null //x눌렀을 때, input창의 내용도 null값으로 바뀐다
     }
 
     return (

@@ -8,13 +8,12 @@ const Detail = () => {
     const [data,setData]=useState([]); //받아올 깃헙 정보들을 data변수로 설정했습니다
     const {state}=useLocation(); //useNavigate으로 넘겼던 유저로그인 정보를 받아옵니다
     const navigate=useNavigate()
-    const [loading, setLoading] = useState(false);
+    const [loading, setLoading] = useState(false);//로딩 중인지의 여부
 
 
     async function getGithubProfile() {
         setLoading(true);
         const response = await axios.get("https://api.github.com/users/"+state.id);
-        console.log("data", response);
         setData(response.data);
         setLoading(false);
     }
