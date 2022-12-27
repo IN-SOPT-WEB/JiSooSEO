@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import Header from '../components/common/Header';
 import { List } from '../types/common';
+import styled from 'styled-components';
 
 export default function MessageList() {
     const [messages, setMessages] = useState<List[]>([]);
@@ -70,12 +71,15 @@ export default function MessageList() {
     <>
         <Header/>
         <button type='button' onClick={handleClick}>글쓰기</button>
+
+        <MessageWrapper>
         {messages.map(({writer, message},i) => (
-            <section key={i}>
-            <p>{writer}</p>
-            <p>{message}</p>
-            </section>
+            <div key={i}>
+                <p>{writer}</p>
+                <p>{message}</p>
+            </div>
         ))}
+        </MessageWrapper>
 
         {isClicked&&(      
             <form  onSubmit={handleSubmit}>
@@ -91,3 +95,27 @@ export default function MessageList() {
     </>
   )
 }
+
+const MessageWrapper=styled.section`
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    margin-top: 3rem;
+
+
+    & > div{
+        display: flex;
+        flex-direction:column;
+        align-items: center;
+
+        width: 7rem;
+        height: 7rem;
+
+        margin: 1rem;
+        padding: 1rem;
+
+        border: 0.1rem solid skyblue;
+        border-radius: 0.5rem;
+        background-color: aliceblue;
+    }
+`
