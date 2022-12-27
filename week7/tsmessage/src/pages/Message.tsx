@@ -6,10 +6,10 @@ import { List } from '../types/common';
 export default function MessageList() {
     const [messages, setMessages] = useState<List[]>([]);
     const [isClicked, setIsClicked] = useState<boolean>(false);
-    const [writer, setWriter]=useState("");
-    const [message, setMessage] = useState("");
-    const [password, setPassword]=useState("");
-    const [hint, setHint]=useState("");
+    const [writer, setWriter]=useState<string>("");
+    const [message, setMessage] = useState<string>("");
+    const [password, setPassword]=useState<string>("");
+    const [hint, setHint]=useState<string>("");
 
     const fetchData = async () => {
       try {
@@ -39,7 +39,6 @@ export default function MessageList() {
         formData.append("hint", hint);
         
         event.preventDefault();
-        // setMessages("{"writer":writer, "message":message, "password":password, "hint":hint}")
         console.log("ddfdfdf")
         console.log(formData)
 
@@ -68,7 +67,6 @@ export default function MessageList() {
   return (
     <>
         <Header/>
-        {/* {isClicked&&<MessageForm/>} */}
         <button type='button' onClick={handleClick}>글쓰기</button>
         {messages.map(({writer, message},i) => (
             <section key={i}>
