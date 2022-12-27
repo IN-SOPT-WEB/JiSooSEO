@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import styled from 'styled-components'
 
 interface SecretList{
@@ -7,12 +8,26 @@ interface SecretList{
 
 
 export default function CheckModal({hint, password}:SecretList): JSX.Element {
+    const [visible, setVisible] = useState<boolean>(true)
+    const [text, setText]=useState<string>("")
+
+    const handleSubmit=()=>{
+        if(text===password){
+            setVisible(false)
+        }
+    }
+
+
   return (
-    <StCheckModalWrapper>
-        <p>hint | {hint}</p>
-        <input type="text" />
-        <button type='button'>확인</button>
-    </StCheckModalWrapper>
+    <>
+    {visible&&(
+        <StCheckModalWrapper>
+            <p>hint | {hint}</p>
+            <input type="text" onChange={({ target: { value } }) => setText(value)}/>
+            <button type='button' onClick={handleSubmit}>확인</button>
+        </StCheckModalWrapper>
+    )}
+    </>
   )
 }
 
