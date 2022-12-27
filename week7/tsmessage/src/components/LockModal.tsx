@@ -1,17 +1,22 @@
+import { useState } from 'react';
 import styled from 'styled-components'
 import lock from '../assets/lock.png';
 
-interface Click{
-  handleClick: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void
-}
-
-export default function LockModal({handleClick}:Click) {
+export default function LockModal() {
+  const [visible, setVisible] = useState<boolean>(true)
+  
+  const handleClick=()=>{
+    setVisible(false)
+  }
   return (
     <>
-    <StLockModalWrapper>
+    {visible&&(
+    <StLockModalWrapper onClick={handleClick}>
       <img src={lock} alt="자물쇠사진"/>
     </StLockModalWrapper>
+    )}
     </>
+
   )
 }
 

@@ -71,12 +71,6 @@ export default function MessageList() {
         setIsWritingClicked((prev)=>!prev)
     }
 
-    const handleLockModalClick=(e:React.MouseEvent<HTMLButtonElement, MouseEvent>)=>{
-        setIsLockModalClicked(true)
-        console.log(isLockModalClicked)
-    }
-
-
   return (
     <>
         <Header/>
@@ -85,7 +79,7 @@ export default function MessageList() {
         <MessageWrapper>
         {messages.map(({writer, message, hint, password},i) => (
             <div key={i}>
-                {/* {!isLockModalClicked&&<LockModal handleClick={(e:React.MouseEvent<HTMLButtonElement, MouseEvent>)=>handleLockModalClick(e)}/>} */}
+                <LockModal />
                 <CheckModal hint={hint} password={password}/>
                 <p>From. {writer}</p>
                 <p>{message}</p>
