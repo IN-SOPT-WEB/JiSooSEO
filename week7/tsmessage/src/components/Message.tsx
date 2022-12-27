@@ -14,7 +14,6 @@ export default function MessageList() {
     const [message, setMessage] = useState<string>("");
     const [password, setPassword]=useState<string>("");
     const [hint, setHint]=useState<string>("");
-    const [isLockModalClicked, setIsLockModalClicked] = useState<boolean>(false);
 
 
     const fetchData = async () => {
@@ -76,7 +75,7 @@ export default function MessageList() {
         <Header/>
         <button type='button' onClick={handleWritingClick}>글쓰기</button>
 
-        <MessageWrapper>
+        <StMessageWrapper>
         {messages.map(({writer, message, hint, password},i) => (
             <div key={i}>
                 <LockModal />
@@ -85,24 +84,26 @@ export default function MessageList() {
                 <p>{message}</p>
             </div>
         ))}
-        </MessageWrapper>
+        </StMessageWrapper>
 
-        {isWritingClicked&&(      
-            <form  onSubmit={handleSubmit}>
-            <input type="text" placeholder="글쓴이" onChange={({ target: { value } }) => setWriter(value)}/>
-            <input type="text" placeholder='메시지 내용' onChange={({ target: { value } }) => setMessage(value)}/>
-            <input type="text" placeholder='비밀번호' onChange={({ target: { value } }) => setPassword(value)}/>
-            <input type="text" placeholder='힌트'  onChange={({ target: { value } }) => setHint(value)}/>
+        {isWritingClicked&&(     
+            <StFormWrapper>
+                <form  onSubmit={handleSubmit}>
+                <input type="text" placeholder="글쓴이" onChange={({ target: { value } }) => setWriter(value)}/>
+                <input type="text" placeholder='메시지 내용' onChange={({ target: { value } }) => setMessage(value)}/>
+                <input type="text" placeholder='비밀번호' onChange={({ target: { value } }) => setPassword(value)}/>
+                <input type="text" placeholder='힌트'  onChange={({ target: { value } }) => setHint(value)}/>
 
-            <button disabled={!message}>추가</button>
-            </form>
+                <button disabled={!message}>추가</button>
+                </form>
+            </StFormWrapper> 
         )}
 
     </>
   )
 }
 
-const MessageWrapper=styled.section`
+const StMessageWrapper=styled.section`
     display: grid;
     grid-template-columns: repeat(3, 1fr);
 
@@ -133,6 +134,39 @@ const MessageWrapper=styled.section`
             width: 7rem;
             
             border-bottom: 0.1rem solid skyblue;
+        }
+    }
+`
+
+const StFormWrapper=styled.section`
+    position: absolute;
+    z-index: 4;
+
+    width: 20rem;
+    height: 15rem;
+
+    margin-top: 10rem;
+    padding: 5rem 3rem 3rem 3rem;
+
+    border: 0.1rem solid skyblue;
+    border-radius: 0.5rem;
+    background-color: aliceblue;
+
+    & > form{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        & > input{
+            width: 15rem;
+
+            margin: 0.5rem;
+        }
+
+        & > button{
+            width: 15.5rem;
+
+            margin: 0.5rem;
         }
     }
 `
