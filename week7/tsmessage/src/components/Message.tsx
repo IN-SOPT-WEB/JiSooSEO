@@ -38,12 +38,6 @@ export default function MessageList() {
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         setIsWritingClicked((prev)=>!prev)
 
-        let formData = new FormData();
-        formData.append("writer", writer);
-        formData.append("message", message);
-        formData.append("password", password);
-        formData.append("hint", hint);
-        
         e.preventDefault();
 
         axios.post("/letters", 
