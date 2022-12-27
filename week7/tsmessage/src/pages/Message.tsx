@@ -32,6 +32,8 @@ export default function MessageList() {
     }, []);
 
     const handleSubmit = (event:any) => {
+        setIsClicked((prev)=>!prev)
+
         let formData = new FormData();
         formData.append("writer", writer);
         formData.append("message", message);
@@ -75,15 +77,16 @@ export default function MessageList() {
             </section>
         ))}
 
+        {isClicked&&(      
+            <form  onSubmit={handleSubmit}>
+            <input type="text" placeholder="글쓴이" onChange={({ target: { value } }) => setWriter(value)}/>
+            <input type="text" placeholder='메시지 내용' onChange={({ target: { value } }) => setMessage(value)}/>
+            <input type="text" placeholder='비밀번호' onChange={({ target: { value } }) => setPassword(value)}/>
+            <input type="text" placeholder='힌트'  onChange={({ target: { value } }) => setHint(value)}/>
 
-      <form onSubmit={handleSubmit}>
-        <input type="text" placeholder="글쓴이" onChange={({ target: { value } }) => setWriter(value)}/>
-        <input type="text" placeholder='메시지 내용' onChange={({ target: { value } }) => setMessage(value)}/>
-        <input type="text" placeholder='비밀번호' onChange={({ target: { value } }) => setPassword(value)}/>
-        <input type="text" placeholder='힌트'  onChange={({ target: { value } }) => setHint(value)}/>
-
-        <button disabled={!message}>추가</button>
-      </form>
+            <button disabled={!message}>추가</button>
+            </form>
+        )}
 
     </>
   )
