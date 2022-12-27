@@ -11,7 +11,6 @@ export const handlers = [
     rest.post<List>("/letters", async (req, res, ctx) => {
         await sleep(200);
         messageList.push(await req.json())
-        console.log(messageList)
         return res(ctx.status(201), ctx.json(messageList));
     }),
 ];
