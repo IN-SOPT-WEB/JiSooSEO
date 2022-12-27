@@ -75,7 +75,7 @@ export default function MessageList() {
         <MessageWrapper>
         {messages.map(({writer, message},i) => (
             <div key={i}>
-                <p>{writer}</p>
+                <p>From. {writer}</p>
                 <p>{message}</p>
             </div>
         ))}
@@ -108,14 +108,25 @@ const MessageWrapper=styled.section`
         flex-direction:column;
         align-items: center;
 
+        text-align: center;
+
         width: 7rem;
         height: 7rem;
 
         margin: 1rem;
-        padding: 1rem;
 
         border: 0.1rem solid skyblue;
         border-radius: 0.5rem;
         background-color: aliceblue;
+
+        & > p{
+            margin: 0.3rem;
+        }
+
+        & > p:nth-child(1){
+            width: 7rem;
+            
+            border-bottom: 0.1rem solid skyblue;
+        }
     }
 `
