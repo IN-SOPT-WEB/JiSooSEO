@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react'
 import Header from '../components/common/Header';
 import { List } from '../types/common';
 import styled from 'styled-components';
+import LockModal from './LockModal';
 
 export default function MessageList() {
     const [messages, setMessages] = useState<List[]>([]);
@@ -75,6 +76,7 @@ export default function MessageList() {
         <MessageWrapper>
         {messages.map(({writer, message},i) => (
             <div key={i}>
+                <LockModal/>
                 <p>From. {writer}</p>
                 <p>{message}</p>
             </div>
