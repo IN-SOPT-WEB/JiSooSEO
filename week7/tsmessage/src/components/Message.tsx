@@ -4,14 +4,18 @@ import Header from '../components/common/Header';
 import { List } from '../types/common';
 import styled from 'styled-components';
 import LockModal from './LockModal';
+import CheckModal from './CheckModal';
+
 
 export default function MessageList() {
     const [messages, setMessages] = useState<List[]>([]);
-    const [isClicked, setIsClicked] = useState<boolean>(false);
+    const [isWritingClicked, setIsWritingClicked] = useState<boolean>(false);
     const [writer, setWriter]=useState<string>("");
     const [message, setMessage] = useState<string>("");
     const [password, setPassword]=useState<string>("");
     const [hint, setHint]=useState<string>("");
+    const [isLockModalClicked, setIsLockModalClicked] = useState<boolean>(false);
+
 
     const fetchData = async () => {
       try {
@@ -34,7 +38,7 @@ export default function MessageList() {
     }, []);
 
     const handleSubmit = (event:any) => {
-        setIsClicked((prev)=>!prev)
+        setIsWritingClicked((prev)=>!prev)
 
         let formData = new FormData();
         formData.append("writer", writer);
@@ -63,27 +67,33 @@ export default function MessageList() {
           });
       };
     
-    const handleClick=()=>{
-        setIsClicked((prev)=>!prev)
+    const handleWritingClick=()=>{
+        setIsWritingClicked((prev)=>!prev)
+    }
+
+    const handleLockModalClick=(e:React.MouseEvent<HTMLButtonElement, MouseEvent>)=>{
+        setIsLockModalClicked(true)
+        console.log(isLockModalClicked)
     }
 
 
   return (
     <>
         <Header/>
-        <button type='button' onClick={handleClick}>글쓰기</button>
+        <button type='button' onClick={handleWritingClick}>글쓰기</button>
 
         <MessageWrapper>
-        {messages.map(({writer, message},i) => (
+        {messages.map(({writer, message, hint, password},i) => (
             <div key={i}>
-                <LockModal/>
+                {/* {!isLockModalClicked&&<LockModal handleClick={(e:React.MouseEvent<HTMLButtonElement, MouseEvent>)=>handleLockModalClick(e)}/>} */}
+                <CheckModal hint={hint} password={password}/>
                 <p>From. {writer}</p>
                 <p>{message}</p>
             </div>
         ))}
         </MessageWrapper>
 
-        {isClicked&&(      
+        {isWritingClicked&&(      
             <form  onSubmit={handleSubmit}>
             <input type="text" placeholder="글쓴이" onChange={({ target: { value } }) => setWriter(value)}/>
             <input type="text" placeholder='메시지 내용' onChange={({ target: { value } }) => setMessage(value)}/>

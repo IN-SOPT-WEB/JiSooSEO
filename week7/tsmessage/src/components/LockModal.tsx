@@ -1,7 +1,11 @@
 import styled from 'styled-components'
 import lock from '../assets/lock.png';
 
-export default function RockModal() {
+interface Click{
+  handleClick: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void
+}
+
+export default function LockModal({handleClick}:Click) {
   return (
     <>
     <StLockModalWrapper>
@@ -13,7 +17,7 @@ export default function RockModal() {
 
 const StLockModalWrapper=styled.section`
   position: absolute;
-  z-index: 2;
+  z-index: 3;
 
   width: 7rem;
   height: 7rem;
