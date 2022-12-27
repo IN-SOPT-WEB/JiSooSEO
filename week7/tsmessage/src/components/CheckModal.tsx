@@ -1,10 +1,6 @@
 import { useState } from 'react';
 import styled from 'styled-components'
-
-interface SecretList{
-    hint:string; 
-    password:string
-}
+import { SecretList } from 'types/common';
 
 
 export default function CheckModal({hint, password}:SecretList): JSX.Element {
