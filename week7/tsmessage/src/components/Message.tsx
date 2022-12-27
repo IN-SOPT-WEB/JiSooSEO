@@ -22,7 +22,6 @@ export default function MessageList() {
               method: "get",
               url: "/letters",
           });
-          console.log(res.data);
           if (res.status === 200) {
               setMessages(res.data);
           }
@@ -36,7 +35,7 @@ export default function MessageList() {
         fetchData();
     }, []);
 
-    const handleSubmit = (event:any) => {
+    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         setIsWritingClicked((prev)=>!prev)
 
         let formData = new FormData();
@@ -45,9 +44,7 @@ export default function MessageList() {
         formData.append("password", password);
         formData.append("hint", hint);
         
-        event.preventDefault();
-        console.log("ddfdfdf")
-        console.log(formData)
+        e.preventDefault();
 
         axios.post("/letters", 
             {
@@ -56,11 +53,10 @@ export default function MessageList() {
               "password": password,
               "hint": hint     
             }
-          ).then((res) => {
-            console.log(res)
+          )
+          .then((res) => {
             axios.get("/letters")
               .then((res) => {
-                setMessage("")
                 setMessages(res.data);
               });
           });
@@ -88,7 +84,7 @@ export default function MessageList() {
 
         {isWritingClicked&&(     
             <StFormWrapper>
-                <form  onSubmit={handleSubmit}>
+                <form  onSubmit={(e: React.FormEvent<HTMLFormElement>)=>handleSubmit(e)}>
                 <input type="text" placeholder="글쓴이" onChange={({ target: { value } }) => setWriter(value)}/>
                 <input type="text" placeholder='메시지 내용' onChange={({ target: { value } }) => setMessage(value)}/>
                 <input type="text" placeholder='비밀번호' onChange={({ target: { value } }) => setPassword(value)}/>
