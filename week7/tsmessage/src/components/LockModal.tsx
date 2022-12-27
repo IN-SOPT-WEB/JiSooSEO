@@ -21,6 +21,8 @@ const StLockModalWrapper=styled.section`
   border-radius: 0.5rem;
   background-color: aliceblue;
 
+  cursor: pointer;
+
   & > img{
     width: 7rem;
     height: 7rem;
